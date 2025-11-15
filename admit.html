@@ -283,6 +283,155 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+
+
+        /* admit card css */
+
+        /* Admit Card Section Styles */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.main-container h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card p {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.card input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    background-color: var(--light);
+}
+
+.card input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
+}
+
+.card input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.card button {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(26, 75, 140, 0.3);
+}
+
+.card button:hover {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 75, 140, 0.4);
+}
+
+.card button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design for Admit Card Section */
+@media (max-width: 768px) {
+    .main-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-container {
+        padding: 0 15px;
+        margin: 1rem auto;
+    }
+    
+    .main-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        padding: 1.2rem;
+    }
+    
+    .card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .card button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -307,12 +456,55 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1 class="coming-soon">MORE UPDATE COMING SOON........</h1>
-        <p class="wait-message">Please wait while we prepare more exciting content for you. We're working hard to bring you the best educational resources.</p>
-    </div>
+    <div class="main-container">
+    <h1>BTEUP Admit & Verification Card Portal</h1>
+    
+    <div class="card-container">
+        <!-- Admit Card Box -->
+        <div class="card">
+            <h2>🎓 Admit Card</h2>
+            <p>अपना Enrollment Number डालें और "Show Admit Card" पर क्लिक करें।</p>
+            <input type="text" id="enrollAdmit" placeholder="उदा: E2333183500000" />
+            <button onclick="showAdmitCard()">Show Admit Card</button>
+        </div>
 
+        <!-- Verification Card Box -->
+        <div class="card">
+            <h2>🧾 Verification Card</h2>
+            <p>अपना Enrollment Number डालें और "Show Verification Card" पर क्लिक करें।</p>
+            <input type="text" id="enrollVerify" placeholder="उदा: E233318355000000" />
+            <button onclick="showVerificationCard()">Show Verification Card</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+   function showAdmitCard() {
+      const enroll = document.getElementById("enrollAdmit").value.trim();
+      if (!enroll) {
+        alert("कृपया Admit Card के लिए Enrollment Number दर्ज करें।");
+        return;
+      }
+      const url = `https://bteup.ac.in/ESeva/Student/AdmitCard.aspx?EnrollNumber=${encodeURIComponent(enroll)}`;
+      window.open(url, "_blank");
+    }
+
+    // Verification card functionality
+    function showVerificationCard() {
+      const enroll = document.getElementById("enrollVerify").value.trim();
+      if (!enroll) {
+        alert("कृपया Verification Card के लिए Enrollment Number दर्ज करें।");
+        return;
+      }
+      const url = `https://bteup.ac.in/ESeva/Student/VerificationCard.aspx?EnrollNumber=${encodeURIComponent(enroll)}`;
+      window.open(url, "_blank");
+    }
+</script>
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
