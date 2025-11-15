@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polytechnic Academy - Books & PYQs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img assests/logo.jpg">
     <style>
         * {
             margin: 0;
@@ -726,8 +727,12 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#resources"><i class="fas fa-book"></i> Resources</a></li>
-                    <li><a href="#search"><i class="fas fa-search"></i> Search</a></li>
+                      <li><a href="books.html"><i class="fas fa-book"></i> books</a></li>
+                    <li><a href="Syallbus.html"><i class="fas fa-book"></i> Syallbus</a></li>
+                     <li><a href="admit.html"><i class="fas fa-search"></i> admit card</a></li>
+                    <li><a href="Extra.html"><i class="fas fa-pen"></i> Extra actvity</a></li>
+                     
+
                 </ul>
             </nav>
         </div>
@@ -739,7 +744,7 @@
             <h1 class="fade-in">Polytechnic Academy - Books & PYQs</h1>
             <p class="fade-in">Access textbooks and previous year question papers for all Polytechnic branches. Prepare effectively with our organized collection.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#resources" class="btn fade-in">Explore PYQs</a>
+             
                 <a href="#resources" class="btn btn-books fade-in">Explore Books</a>
             </div>
         </div>
@@ -924,7 +929,6 @@
                 &copy; 2023 Polytechnic Academy. All rights reserved. | Designed for Educational Purpose
             </div> -->
              <div class="copyright">
-                <div class="particles"></div>
                 <p>
                     Every great project begins with a spark of curiosity and dedication.
                     Crafted with 💻 passion and ❤️ love by
@@ -935,183 +939,6 @@
                     © All rights reserved. | Designed & Developed by
                     <span class="author-name">Amit Kumar</span>
                 </p>
-
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-                    .copyright {
-                        position: relative;
-                        overflow: hidden;
-                        text-align: center;
-                        font-family: "Poppins", sans-serif;
-                        font-size: 15px;
-                        color: rgba(255, 255, 255, 0.92);
-                        background: rgba(255, 255, 255, 0.06);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        padding: 28px;
-                        border-radius: 20px;
-                        margin-top: 50px;
-                        backdrop-filter: blur(10px);
-                        box-shadow: 0 6px 35px rgba(255, 255, 255, 0.07);
-                        transition: all 0.4s ease-in-out;
-                        animation: fadeIn 2s ease forwards;
-                    }
-
-                    @keyframes fadeIn {
-                        0% {
-                            opacity: 0;
-                            transform: translateY(20px);
-                        }
-
-                        100% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-
-                    /* Floating glowing border */
-                    .copyright::after {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        border-radius: 20px;
-                        padding: 2px;
-                        background: linear-gradient(120deg, #ff8a00, #e52e71, #7b6cff, #00e5ff, #ff8a00);
-                        background-size: 300% 300%;
-                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                        -webkit-mask-composite: xor;
-                        mask-composite: exclude;
-                        animation: borderFlow 6s linear infinite;
-                    }
-
-                    @keyframes borderFlow {
-                        0% {
-                            background-position: 0% 50%;
-                        }
-
-                        50% {
-                            background-position: 100% 50%;
-                        }
-
-                        100% {
-                            background-position: 0% 50%;
-                        }
-                    }
-
-                    /* Particles illusion */
-                    .particles::before,
-                    .particles::after {
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 200%;
-                        height: 200%;
-                        background:
-                            radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                            radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 3px),
-                            radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 3px);
-                        background-size: 80px 80px, 100px 100px, 120px 120px;
-                        animation: floatDots 25s linear infinite;
-                        filter: blur(1px);
-                        opacity: 0.3;
-                        z-index: 0;
-                    }
-
-                    .particles::after {
-                        animation-direction: reverse;
-                        opacity: 0.2;
-                    }
-
-                    @keyframes floatDots {
-                        from {
-                            transform: translate(0, 0);
-                        }
-
-                        to {
-                            transform: translate(-80px, -80px);
-                        }
-                    }
-
-                    /* 3D Gradient Name */
-                    .author-name {
-                        font-size: 1.9rem;
-                        font-weight: 700;
-                        background: linear-gradient(90deg, #ff8a00, #e52e71, #7b6cff, #00e5ff);
-                        background-size: 300% 300%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        display: inline-block;
-                        position: relative;
-                        z-index: 2;
-                        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-                        animation: gradientMove 6s ease infinite;
-                        transition: all 0.4s ease;
-                    }
-
-                    @keyframes gradientMove {
-                        0% {
-                            background-position: 0% 50%;
-                        }
-
-                        50% {
-                            background-position: 100% 50%;
-                        }
-
-                        100% {
-                            background-position: 0% 50%;
-                        }
-                    }
-
-                    /* Hover 3D pop & glow */
-                    .author-name:hover {
-                        transform: perspective(600px) translateZ(45px) rotateX(5deg);
-                        text-shadow: 0 0 20px rgba(255, 136, 0, 0.8),
-                            0 0 35px rgba(123, 108, 255, 0.8);
-                        filter: brightness(1.3);
-                    }
-
-                    /* Soft moving light reflection */
-                    .copyright::before {
-                        content: "";
-                        position: absolute;
-                        top: -50%;
-                        left: -50%;
-                        width: 200%;
-                        height: 200%;
-                        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 70%);
-                        transform: rotate(25deg);
-                        animation: lightMove 10s linear infinite;
-                        z-index: 1;
-                    }
-
-                    @keyframes lightMove {
-                        0% {
-                            transform: rotate(25deg) translate(-50%, -50%);
-                        }
-
-                        50% {
-                            transform: rotate(25deg) translate(25%, 25%);
-                        }
-
-                        100% {
-                            transform: rotate(25deg) translate(-50%, -50%);
-                        }
-                    }
-
-                    /* Responsive */
-                    @media (max-width: 600px) {
-                        .author-name {
-                            font-size: 1.5rem;
-                        }
-
-                        .copyright {
-                            font-size: 13px;
-                            padding: 18px;
-                            border-radius: 14px;
-                        }
-                    }
-                </style>
             </div>
         </div>
     </footer>
